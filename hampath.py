@@ -1,5 +1,18 @@
 #!/usr/bin/python
 
+"""
+using: ./hampath.py input_file
+
+input file - connection matrix for a graph
+numbers with ; as separator
+
+ex.
+
+0;1;2
+1;0;3
+2;3;0
+"""
+
 import sys
 
 #Initial node for search \ start element in result chain.
