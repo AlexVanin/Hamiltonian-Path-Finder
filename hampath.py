@@ -2,22 +2,23 @@
 
 import sys
 
-start = 0;			#Initial node for search \ start element in result chain.
+#Initial node for search \ start element in result chain.
+start = 0;
 
 def deep (path):
-	for i in range(0, len(matrix[0])):								# len(matrix[0]) - number of iterations
-		if matrix[path[-1]][i] != 0:								# path[-1] - last element in chain
-			if i not in path:										# if element not in chain already and has a connection w\ prev. node -- connect
-				newPath = list(path)								# a = b not equal a = copy(b) >_<
+	for i in range(0, len(matrix[0])):	# len(matrix[0]) - number of iterations
+		if matrix[path[-1]][i] != 0:	# path[-1] - last element in chain
+			if i not in path:
+				newPath = list(path)	# a = b not equal a = copy(b) >_<
 				newPath.append(i)
 
-				if len(newPath) == len(matrix[0]):					#
-					if matrix[newPath[0]][newPath[-1]] != 0:		# check connection for first and last nodes
+				if len(newPath) == len(matrix[0]):
+					if matrix[newPath[0]][newPath[-1]] != 0:
 						print newPath
 						return 1
 
 				fin = deep ( newPath )
-				if fin == 1:										# exit if path found
+				if fin == 1:			# exit if path found
 					return 1
 
 	return 0
